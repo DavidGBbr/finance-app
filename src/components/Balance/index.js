@@ -3,7 +3,18 @@ import * as C from "./styles";
 
 export default function Balance({ saldo, gastos }) {
   return (
-    <C.Container>
+    <C.Container
+      from={{ rotateX: "-100deg", opacity: 0 }}
+      animate={{
+        rotateX: "0deg",
+        opacity: 1,
+      }}
+      transition={{
+        type: "timing",
+        delay: 300,
+        duration: 900,
+      }}
+    >
       <C.Item>
         <C.ItemTitle>Saldo</C.ItemTitle>
         <C.Content>

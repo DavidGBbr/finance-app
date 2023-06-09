@@ -1,3 +1,4 @@
+import { MotiText, MotiView } from "moti";
 import { styled } from "styled-components/native";
 
 export const Container = styled.TouchableOpacity`
@@ -8,7 +9,7 @@ export const Container = styled.TouchableOpacity`
 `;
 
 export const Date = styled.Text`
-  color: #dadada;
+  color: #b5b7b9;
   font-weight: bold;
 `;
 
@@ -24,8 +25,16 @@ export const Label = styled.Text`
   font-weight: bold;
 `;
 
-export const Value = styled.Text`
+export const Value = styled(MotiText)`
   font-size: 16px;
   font-weight: bold;
   color: #66bb6a;
+`;
+
+export const Skeleton = styled(MotiView)`
+  margin-top: 6px;
+  width: 80px;
+  height: 10px;
+  background-color: #dadada;
+  border-radius: 8px;
 `;

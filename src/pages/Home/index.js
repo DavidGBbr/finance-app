@@ -3,6 +3,7 @@ import * as C from "./styles";
 import Header from "../../components/Header";
 import Balance from "../../components/Balance";
 import Movements from "../../components/Movements";
+import Actions from "../../components/Actions";
 
 const list = [
   {
@@ -33,6 +34,7 @@ export default function Home() {
     <C.Container>
       <Header name="David" />
       <Balance saldo="R$20.398,79" gastos="-527,00" />
+      <Actions />
       <C.Title>Últimas movimentações</C.Title>
       <C.List
         data={list}

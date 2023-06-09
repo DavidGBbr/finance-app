@@ -1,6 +1,7 @@
 import { styled } from "styled-components/native";
+import { MotiView } from "moti";
 
-export const Container = styled.View`
+export const Container = styled(MotiView)`
   background-color: #fff;
   flex-direction: row;
   justify-content: space-between;
@@ -14,7 +15,7 @@ export const Item = styled.View``;
 
 export const ItemTitle = styled.Text`
   font-size: 20px;
-  color: #dadada;
+  color: #b5b7b9;
 `;
 
 export const Content = styled.View`
@@ -23,7 +24,7 @@ export const Content = styled.View`
 `;
 
 export const CurrencySymbol = styled.Text`
-  color: #dadada;
+  color: #b5b7b9;
   margin-right: 6px;
 `;
 

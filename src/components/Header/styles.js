@@ -1,19 +1,20 @@
 import { styled } from "styled-components/native";
+import { MotiView, MotiText } from "moti";
 
 export const Container = styled.View`
-  background: #0f0f0f;
+  background: rgba(33, 37, 38, 1);
   flex-direction: row;
   padding: 0px 16px 44px 16px;
 `;
 
-export const Content = styled.View`
+export const Content = styled(MotiView)`
   flex: 1;
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
 `;
 
-export const Username = styled.Text`
+export const Username = styled(MotiText)`
   font-size: 18px;
   color: #fff;
   font-weight: bold;

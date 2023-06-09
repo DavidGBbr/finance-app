@@ -8,7 +8,7 @@ export const Container = styled.View`
 export const Title = styled.Text`
   font-size: 18px;
   font-weight: bold;
-  margin: 14px 14px 0px 14px;
+  margin: 14px;
 `;
 
 export const List = styled.FlatList`
