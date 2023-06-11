@@ -2,7 +2,7 @@ import { styled } from "styled-components/native";
 import { MotiView, MotiText } from "moti";
 
 export const Container = styled.View`
-  background: rgba(33, 37, 38, 1);
+  background: #222727;
   flex-direction: row;
   padding: 0px 16px 44px 16px;
 `;

@@ -30,10 +30,27 @@ const list = [
 ];
 
 export default function Home() {
+  function calculateTotal(list, type) {
+    const filteredList = list.filter((movement) => movement.type === type);
+    const total = filteredList
+      .map((movement) =>
+        parseFloat(movement.value.replace(/\./g, "").replace(",", "."))
+      )
+      .reduce((a, b) => a + b);
+
+    return total.toLocaleString("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    });
+  }
+
+  const totalEntrances = calculateTotal(list, 1);
+  const totalExpenses = calculateTotal(list, 0);
+
   return (
     <C.Container>
       <Header name="David" />
-      <Balance saldo="R$20.398,79" gastos="-527,00" />
+      <Balance saldo={totalEntrances} gastos={`-${totalExpenses}`} />
       <Actions />
       <C.Title>Últimas movimentações</C.Title>
       <C.List

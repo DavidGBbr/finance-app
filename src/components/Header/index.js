@@ -1,17 +1,10 @@
 import React from "react";
 import * as C from "./styles";
-import { StatusBar } from "expo-status-bar";
 import { Feather } from "@expo/vector-icons";
-import ExpoStatusBar from "expo-status-bar/build/ExpoStatusBar";
-
-const statusBarHeight = StatusBar.currentHeight
-  ? StatusBar.currentHeight + 22
-  : 64;
 
 export default function Header({ name }) {
   return (
     <C.Container
-      style={{ paddingTop: statusBarHeight }}
       from={{ rotateX: "-100deg", opacity: 0 }}
       animate={{
         rotateX: "0deg",
@@ -39,7 +32,6 @@ export default function Header({ name }) {
           <Feather name="user" size={27} color="#fff" />
         </C.BtnUser>
       </C.Content>
-      <ExpoStatusBar style="light" />
     </C.Container>
   );
 }
