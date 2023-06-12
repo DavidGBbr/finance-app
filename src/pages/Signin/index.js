@@ -1,8 +1,12 @@
-import React from "react";
-import { View, Text } from "react-native";
+import React, { useContext, useState } from "react";
 import * as C from "./styles";
+import { AuthContext } from "../../contexts/auth";
 
 export default function SignIn() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const { signIn } = useContext(AuthContext);
   return (
     <C.Container>
       <C.ContainerHeader
@@ -19,12 +23,20 @@ export default function SignIn() {
         transition={{ type: "timing", duration: 800 }}
       >
         <C.Title>Email</C.Title>
-        <C.Input placeholder="Digite um email..." />
+        <C.Input
+          placeholder="Digite um email..."
+          value={email}
+          onChangeText={(text) => setEmail(text)}
+        />
 
         <C.Title>Senha</C.Title>
-        <C.Input placeholder="Sua senha" />
+        <C.Input
+          placeholder="Sua senha"
+          value={password}
+          onChangeText={(text) => setPassword(text)}
+        />
 
-        <C.Btn>
+        <C.Btn onPress={() => signIn(email, password)}>
           <C.BtnText>Acessar</C.BtnText>
         </C.Btn>
 

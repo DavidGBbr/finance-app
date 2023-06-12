@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import * as C from "./styles";
 import Header from "../../components/Header";
 import Balance from "../../components/Balance";
 import Movements from "../../components/Movements";
 import Actions from "../../components/Actions";
+import { AuthContext } from "../../contexts/auth";
 
 const list = [
   {
@@ -47,9 +48,11 @@ export default function Home() {
   const totalEntrances = calculateTotal(list, 1);
   const totalExpenses = calculateTotal(list, 0);
 
+  const { userName } = useContext(AuthContext);
+
   return (
     <C.Container>
-      <Header name="David" />
+      <Header name={userName} />
       <Balance saldo={totalEntrances} gastos={`-${totalExpenses}`} />
       <Actions />
       <C.Title>Últimas movimentações</C.Title>
