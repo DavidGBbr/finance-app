@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import * as C from "./styles";
 import { AntDesign } from "@expo/vector-icons";
+import { AuthContext } from "../../contexts/auth";
 
 export default function Actions() {
+  const { setVisibleModal } = useContext(AuthContext);
+
   return (
     <C.Container horizontal={true} showsHorizontalScrollIndicator={false}>
-      <C.ActionBtn>
+      <C.ActionBtn onPress={() => setVisibleModal(true)}>
         <C.AreaBtn>
           <AntDesign name="addfolder" size={26} color="#000" />
         </C.AreaBtn>
-        <C.LabelBtn>Entradas</C.LabelBtn>
+        <C.LabelBtn>Entrada</C.LabelBtn>
       </C.ActionBtn>
 
       <C.ActionBtn>

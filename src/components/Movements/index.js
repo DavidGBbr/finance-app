@@ -13,7 +13,7 @@ export default function Movements({ data }) {
         {showValue ? (
           <AnimatePresence exitBeforeEnter>
             <C.Value
-              style={{ color: data.type === 1 ? "#66bb6a" : "#ef5350" }}
+              style={{ color: data.type === 0 ? "#66bb6a" : "#ef5350" }}
               from={{ translateX: 100 }}
               animate={{ translateX: 0 }}
               transition={{
@@ -21,7 +21,7 @@ export default function Movements({ data }) {
                 duration: 500,
               }}
             >
-              {data.type === 1 ? `R$ ${data.value}` : `R$ -${data.value}`}
+              {data.type === 0 ? `R$ ${data.value}` : `R$ -${data.value}`}
             </C.Value>
           </AnimatePresence>
         ) : (

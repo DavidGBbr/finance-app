@@ -34,6 +34,7 @@ export default function SignIn() {
           placeholder="Sua senha"
           value={password}
           onChangeText={(text) => setPassword(text)}
+          secureTextEntry={true}
         />
 
         <C.Btn onPress={() => signIn(email, password)}>

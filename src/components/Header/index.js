@@ -1,8 +1,10 @@
 import React from "react";
 import * as C from "./styles";
 import { Feather } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 export default function Header({ name }) {
+  const navigation = useNavigation();
   return (
     <C.Container
       from={{ rotateX: "-100deg", opacity: 0 }}
@@ -28,7 +30,7 @@ export default function Header({ name }) {
         >
           {name}
         </C.Username>
-        <C.BtnUser>
+        <C.BtnUser onPress={() => navigation.navigate("Welcome")}>
           <Feather name="user" size={27} color="#fff" />
         </C.BtnUser>
       </C.Content>

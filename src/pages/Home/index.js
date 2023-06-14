@@ -5,32 +5,11 @@ import Balance from "../../components/Balance";
 import Movements from "../../components/Movements";
 import Actions from "../../components/Actions";
 import { AuthContext } from "../../contexts/auth";
-
-const list = [
-  {
-    id: 1,
-    label: "Boleto conta luz",
-    value: "300,90",
-    date: "17/09/2022",
-    type: 0,
-  },
-  {
-    id: 2,
-    label: "Pix Cliente X",
-    value: "2.500,00",
-    date: "20/09/2022",
-    type: 1,
-  },
-  {
-    id: 3,
-    label: "Salário",
-    value: "7.200,00",
-    date: "22/09/2022",
-    type: 1,
-  },
-];
+import Modal from "../../components/Modal";
 
 export default function Home() {
+  const { list } = useContext(AuthContext);
+
   function calculateTotal(list, type) {
     const filteredList = list.filter((movement) => movement.type === type);
     const total = filteredList
@@ -45,8 +24,8 @@ export default function Home() {
     });
   }
 
-  const totalEntrances = calculateTotal(list, 1);
-  const totalExpenses = calculateTotal(list, 0);
+  const totalEntrances = calculateTotal(list, 0);
+  const totalExpenses = calculateTotal(list, 1);
 
   const { userName } = useContext(AuthContext);
 
@@ -62,6 +41,7 @@ export default function Home() {
         showsVerticalScrollIndicator={false}
         renderItem={({ item }) => <Movements data={item} />}
       />
+      <Modal />
     </C.Container>
   );
 }
